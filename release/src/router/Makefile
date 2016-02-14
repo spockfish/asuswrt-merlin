@@ -2054,6 +2054,7 @@ libusb-0.1.12-clean:
 libdaemon/stamp-h1:
 	cd libdaemon && $(CONFIGURE) ac_cv_func_setpgrp_void=yes \
 	--disable-dependency-tracking
+	cd libdaemon && libtoolize && aclocal && autoheader && automake --add-missing
 	touch $@
 
 libdaemon: libdaemon/stamp-h1
@@ -3406,6 +3407,7 @@ libxml2/stamp-h1:
 	cd libxml2 && \
 	CC=$(CC) AR=$(AR) RANLIB=$(RANLIB) LD=$(LD) CFLAGS="-Os -Wall $(EXTRACFLAGS)" LDFLAGS=-ldl \
 	./$(CONFIGURE) --prefix=/usr --without-python --disable-dependency-tracking
+	cd libxml2 && libtoolize && aclocal && autoheader && automake --add-missing
 	touch $@
 
 libxml2: libxml2/stamp-h1
