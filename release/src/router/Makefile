@@ -2586,6 +2586,7 @@ tor/Makefile:
 					--with-openssl-dir=$(TOP)/openssl \
 					--with-zlib-dir=$(TOP)/zlib \
 					--disable-asciidoc)
+	cd tor && autoreconf
 
 tor-install: tor
 	install -D tor/src/or/tor $(INSTALLDIR)/tor/usr/sbin/Tor
